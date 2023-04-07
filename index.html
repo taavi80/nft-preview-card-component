@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>NFT preview card component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --Soft-blue: hsl(215, 51%, 70%);
+        --Cyan: hsl(178, 100%, 50%);
+        --Very-dark-blue: hsl(217, 54%, 11%);
+
+        --Very-dark-blue2: hsl(216, 50%, 16%);
+
+        --Very-dark-blue3: hsl(215, 32%, 27%);
+
+        --White: hsl(0, 0%, 100%);
+      }
+
+      .color-sb {
+        color: var(--Soft-blue);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        background-color: var(--Very-dark-blue);
+        font-family: "Outfit", sans-serif;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+        max-width: 375px;
+        background-color: var(--Very-dark-blue2);
+        padding: 2rem;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card > .img-wrapper {
+        order: -1;
+        position: relative;
+      }
+
+      .img-wrapper::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: hsla(178, 100%, 50%, 0.4);
+        border-radius: 10px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .img-wrapper:hover::before {
+        cursor: pointer;
+        opacity: 1;
+      }
+
+      .img-wrapper img {
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .img-wrapper .view {
+        width: 15%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .card h1,
+      .creator-name {
+        color: var(--White);
+      }
+
+      .card h1 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 1.5rem 0;
+      }
+
+      .card h1:hover,
+      .creator-name:hover {
+        cursor: pointer;
+        color: var(--Cyan);
+      }
+
+      .card > p {
+        font-weight: 300;
+        line-height: 1.6;
+      }
+
+      .ethereum,
+      .eth,
+      .clock,
+      .creator {
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+      }
+
+      .ethereum {
+        justify-content: space-between;
+        margin-top: 1.5rem;
+      }
+
+      .eth img,
+      .clock img {
+        margin-right: 0.5rem;
+      }
+
+      .eth p {
+        color: var(--Cyan);
+        font-weight: 400;
+      }
+
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: var(--Very-dark-blue3);
+        margin: 1rem 0;
+      }
+
+      .creator img {
+        width: 11%;
+        border: 1px solid var(--White);
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+
+      .creator p {
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>Equilibrium #3429</h1>
+
+      <div class="img-wrapper">
+        <img class="view" src="images/icon-view.svg" alt="" />
+        <img
+          src="images/image-equilibrium.jpg"
+          alt="link to equilibrium image"
+        />
+      </div>
+
+      <p class="color-sb">
+        Our Equilibrium collection promotes balance and calm.
+      </p>
+      <div class="ethereum">
+        <div class="eth">
+          <img src="images/icon-ethereum.svg" alt="" />
+          <p>0.041 ETH</p>
+        </div>
+        <div class="clock">
+          <img src="images/icon-clock.svg" alt="" />
+          <p class="color-sb">3 days left</p>
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="creator">
+        <img src="images/image-avatar.png" alt="" />
+        <p class="color-sb">
+          Creation of <span class="creator-name">Jules Wyvern</span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
