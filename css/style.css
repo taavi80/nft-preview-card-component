@@ -7,10 +7,6 @@
   --White: hsl(0, 0%, 100%);
 }
 
-.color-sb {
-  color: var(--Soft-blue);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -87,9 +83,10 @@ body {
   color: var(--Cyan);
 }
 
-.card > p {
-  font-weight: 300;
-  line-height: 1.6;
+.card > p,
+.ethereum .clock p,
+.creator p {
+  color: var(--Soft-blue);
 }
 
 .ethereum,
@@ -99,6 +96,11 @@ body {
   display: flex;
   align-items: center;
   font-weight: 300;
+}
+
+.card > p {
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 .ethereum {
