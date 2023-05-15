@@ -29,6 +29,7 @@ body {
   background-color: var(--Very-dark-blue2);
   padding: 2rem;
   border-radius: 15px;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
 }
